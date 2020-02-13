@@ -68,7 +68,7 @@ void traverse()
 }
 node* searc(int item)
 {
-    node*ptr=head;
+    node *ptr;
     if(head==NULL)
            {
             cout<<"\nnothing to search list is empty";
@@ -76,7 +76,8 @@ node* searc(int item)
            }
     else
     {
-        while(ptr!=head)
+        ptr=head;
+        do
         {
             if(ptr->info==item)
             {
@@ -84,7 +85,7 @@ node* searc(int item)
                 return(ptr);
             }
             ptr=ptr->link;
-        }
+        }while(ptr!=head);
         cout<<"\nitem not found";
         return(NULL);
     }
