@@ -1,0 +1,92 @@
+#include <iostream>
+#define maxstk 15
+#define max1 10
+#define max2 10
+using namespace std;
+int stack[maxstk],upper[max1],lower[max2];
+int top,top1,top2;
+
+void push(int item)
+{
+    if(top==maxstk)
+    {
+          cout<<"\nOverflow";
+    }
+    else
+    {
+        top=top+1;
+        stack[top]=item;
+    }
+}
+int pop(int item)
+{
+    if(top==0)
+     {
+         cout<<"\nUnderflow";
+         return(0);
+     }
+    else
+    {
+        item=stack[top];
+        top=top-1;
+    }
+    return (item);
+}
+
+void quickSort()
+{
+    int beg,last,piv;
+    beg=stack[1];
+    last=stack[top];
+    piv=beg;
+
+
+}
+
+int main()
+{
+    int x;
+    while(1)
+    {
+        cout<<"\n\n----------Enter your choice----------\n\n";
+        cout<<"1.Insertion in the stack\n2.Deletion of the elements\n3.Display elements\n";
+        cout<<"4.Quick sort\n5.Exit\n";
+        cin>>x;
+        switch(x)
+        {
+        case 1:
+            {
+                    int item;
+                    cout<<"\nEnter elements to the stack:\n";
+                    cin>>item;
+                    push(item);
+                        break;
+            }
+        case 2:
+            {
+                int ite,x;
+                x=pop(ite);
+                cout<<"\nItem deleted :"<<x;
+                break ;
+            }
+        case 3:
+            {
+                cout<<"\nElements are:";
+                for(int i=1;i<=top;i++)
+                {
+                    cout<<stack[i]<<" ";
+                }
+                break ;
+            }
+        case 4:
+            {
+                quickSort();
+            }
+        case 5:
+            return(0);
+        }
+
+    }
+
+    return 0;
+}
