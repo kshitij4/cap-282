@@ -1,10 +1,9 @@
 #include <iostream>
 #define maxstk 15
-#define max1 10
-#define max2 10
+
 using namespace std;
-int stack[maxstk],upper[max1],lower[max2];
-int top,top1,top2;
+int stack[maxstk];
+int top;
 
 void push(int item)
 {
@@ -50,7 +49,7 @@ int main()
     {
         cout<<"\n\n----------Enter your choice----------\n\n";
         cout<<"1.Insertion in the stack\n2.Deletion of the elements\n3.Display elements\n";
-        cout<<"4.Quick sort\n5.Exit\n";
+        cout<<"4.Exit\n";
         cin>>x;
         switch(x)
         {
@@ -78,11 +77,8 @@ int main()
                 }
                 break ;
             }
+        
         case 4:
-            {
-                quickSort();
-            }
-        case 5:
             return(0);
         }
 
